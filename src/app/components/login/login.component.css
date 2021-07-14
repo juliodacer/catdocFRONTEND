@@ -1,0 +1,10 @@
+body{
+    background-color: #AA452F;
+}
+
+.bg{
+    background-image: url("../../../assets/images/login.jpg");
+    background-position: center center;
+    background-repeat: no-repeat;
+}
+
