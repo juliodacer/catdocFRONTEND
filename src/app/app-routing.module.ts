@@ -1,14 +1,14 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
-import { DocentesComponent } from './components/docentes/docentes.component';
 import { EvaluacionComponent } from './components/evaluacion/evaluacion.component';
 import { LegajoComponent } from './components/legajo/legajo.component';
 import { LoginComponent } from './components/login/login.component';
 import { RegisterComponent } from './components/register/register.component';
-import { DocEspComponent } from './screens/documents/doc-esp/doc-esp.component';
-import { DocGenComponent } from './screens/documents/doc-gen/doc-gen.component';
-import { InscriptionComponent } from './screens/inscription/inscription.component';
-import { WelcomeComponent } from './screens/welcome/welcome.component';
+import { DocEspComponent } from './screens/screenDocente/documents/doc-esp/doc-esp.component';
+import { DocGenComponent } from './screens/screenDocente/documents/doc-gen/doc-gen.component';
+import { InscriptionComponent } from './screens/screenDocente/inscription/inscription.component';
+import { DocentesComponent } from './screens/screenCED/docentes/docentes.component';
+import { WelcomeComponent } from './screens/screenDocente/welcome/welcome.component';
 
 const routes: Routes = [
   {path: '', pathMatch: 'full', redirectTo:'login'},

@@ -17,7 +17,7 @@
       <td>{{docente.nombre}}</td>
       <td>{{docente.apellido}}</td>
       <td>{{docente.email}}</td>
-      <td>{{docente.createAt}}</td>
+      <td>{{docente.createAt | date: 'dd/MM/yy' }} </td>
     </tr>
   </tbody>
 </table>
