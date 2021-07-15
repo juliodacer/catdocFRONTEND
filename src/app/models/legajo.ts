@@ -1,7 +1,8 @@
 import { Docente } from "./docente";
 import { Evaluacion } from "./evaluacion";
+import { Generic } from "./generic";
 
-export class Legajo {
+export class Legajo implements Generic{
     id: number;
     nombre: string;
     createAt: string;

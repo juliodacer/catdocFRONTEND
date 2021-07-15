@@ -15,6 +15,8 @@ import { DocEspComponent } from './screens/screenDocente/documents/doc-esp/doc-e
 import { DocGenComponent } from './screens/screenDocente/documents/doc-gen/doc-gen.component';
 import { DocentesComponent } from './screens/screenCED/docentes/docentes.component';
 import { FormsModule } from '@angular/forms';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { MatPaginatorModule } from '@angular/material/paginator';
 
 @NgModule({
   declarations: [
@@ -34,7 +36,9 @@ import { FormsModule } from '@angular/forms';
     AppRoutingModule,
     LayoutModule,
     HttpClientModule,
-    FormsModule
+    FormsModule,
+    BrowserAnimationsModule,
+    MatPaginatorModule
   ],
   providers: [],
   bootstrap: [AppComponent]

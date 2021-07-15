@@ -14,6 +14,7 @@ const routes: Routes = [
   {path: '', pathMatch: 'full', redirectTo:'login'},
   {path: 'login', component: LoginComponent},
   {path: 'register', component: RegisterComponent},
+  {path: 'register/:id', component: RegisterComponent},
   {path: 'docentes', component: DocentesComponent},
   {path: 'legajo', component: LegajoComponent},
   {path: 'evaluacion', component: EvaluacionComponent},

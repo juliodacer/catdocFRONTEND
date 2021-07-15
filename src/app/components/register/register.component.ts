@@ -1,37 +1,24 @@
 import { Component, OnInit } from '@angular/core';
-import { Router } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 import { Docente } from 'src/app/models/docente';
 import { DocenteService } from 'src/app/services/docente.service';
+import { CommonFormComponent } from '../common-form.component';
 
 @Component({
   selector: 'app-register',
   templateUrl: './register.component.html',
   styleUrls: ['./register.component.css']
 })
-export class RegisterComponent implements OnInit {
+export class RegisterComponent extends CommonFormComponent<Docente, DocenteService> implements OnInit {
 
-  titulo = "Registrar Docente"
-  docente: Docente = new Docente();
-  error: any;
-
-
-
-  constructor(private service: DocenteService, private router: Router) { }
-
-  ngOnInit(): void {
-  }
-
-  public crear(): void {
-    this.service.crear(this.docente).subscribe(docente => {
-      console.log(docente);
-      alert(`Docente ${docente.nombre} creado con éxito`);
-      this.router.navigate(['/login'])
-    }, err => {
-      if(err.status === 400){
-        this.error = err.error;
-        console.log(this.error)
-      }
-    })
-  }
-
+  constructor(service: DocenteService, 
+              router: Router,
+              route: ActivatedRoute) {
+                
+                super(service, router, route);
+                this.titulo = 'Crear Docentes';
+                this.model = new Docente();
+                this.redirect = '/docentes';
+                this.nombreModal = Docente.name;
+               }
 }
