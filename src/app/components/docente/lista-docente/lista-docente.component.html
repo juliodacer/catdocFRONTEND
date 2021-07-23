@@ -1,0 +1,41 @@
+<div class="container mt-2">
+  <h1>{{ titulo }}</h1>
+  <div class="alert alert-info" *ngIf="docentes?.length==0">
+    No hay docentes registrados en el sistema
+  </div>
+<table class="table table-hover table-striped" *ngIf="docentes?.length>0">
+  <thead>
+    <tr>
+      <th>ID</th>
+      <th>Nombre</th>
+      <th>Apellido</th>
+      <th>Email</th>
+      <th>Fecha de Creación</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let docente of docentes">
+      <td>{{docente.id}}</td>
+      <td>{{docente.name}}</td>
+      <td>{{docente.surname}}</td>
+      <td>{{docente.email}}</td>
+      <td>{{docente.createAt | date: 'dd/MM/yy' }} </td>
+      <td><button class="btn btn-success my-2" routerLink="/detalle-docente/{{docente.id}}"><i class="far fa-eye"></i> Ver</button></td>
+      <td><button class="btn btn-primary my-2" routerLink="/editar-docente/{{docente.id}}"><i class="far fa-edit"></i> Editar</button></td>
+      <td><button class="btn btn-danger my-2" (click)="eliminar(docente.id)"><i class="far fa-trash-alt"></i>  Eliminar</button></td>
+    </tr>
+  </tbody>
+</table>
+
+ <!--  <mat-paginator
+    [length]="totalRegistros"
+    [pageSize]="totalPorPagina"
+    [pageIndex]="paginaActual"
+    [pageSizeOptions]="[pageSizeOptions]"
+    (page)="paginar($event)"
+    class="float-left mx-2"
+  >
+
+  </mat-paginator> -->
+
+</div>

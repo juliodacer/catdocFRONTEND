@@ -1,0 +1,22 @@
+<div class="container">
+    <div class="row mt-5" *ngIf="docente">
+        <div class="col-md-4 mx-auto">
+          <div class="card">
+              <div class="card-header text-center">
+                  Detalle Docente
+              </div>
+             <ul class="list-group list-group-flush">
+              <li class="list-group-item list-group-item-action">{{docente.id}}</li>
+              <li class="list-group-item list-group-item-action">{{docente.name}}</li>
+              <li class="list-group-item list-group-item-action">{{docente.surname}}</li>
+              <li class="list-group-item list-group-item-action">{{docente.email}}</li>
+              <li class="list-group-item list-group-item-action">{{docente.password}}</li>
+             </ul>
+              <div class="card-footer">
+                  <button class="btn btn-outline-primary btn-block" (click)="volver()"><i class="fas fa-arrow-alt-circle-left"></i> Atrás</button>
+                </div>
+          </div>
+           
+        </div>
+      </div>
+</div>
