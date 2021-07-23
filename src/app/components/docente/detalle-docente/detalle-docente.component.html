@@ -6,11 +6,11 @@
                   Detalle Docente
               </div>
              <ul class="list-group list-group-flush">
-              <li class="list-group-item list-group-item-action">{{docente.id}}</li>
-              <li class="list-group-item list-group-item-action">{{docente.name}}</li>
-              <li class="list-group-item list-group-item-action">{{docente.surname}}</li>
-              <li class="list-group-item list-group-item-action">{{docente.email}}</li>
-              <li class="list-group-item list-group-item-action">{{docente.password}}</li>
+              <li class="list-group-item list-group-item-action text-center"><b>ID: </b> {{docente.id}}</li>
+              <li class="list-group-item list-group-item-action text-center"><b>Nombre: </b> {{docente.name}}</li>
+              <li class="list-group-item list-group-item-action text-center"><b>Apellido: </b> {{docente.surname}}</li>
+              <li class="list-group-item list-group-item-action text-center"><b>Email: </b> {{docente.email}}</li>
+              <!--<li class="list-group-item list-group-item-action"><b>Contraseña</b>{{docente.password}}</li>-->
              </ul>
               <div class="card-footer">
                   <button class="btn btn-outline-primary btn-block" (click)="volver()"><i class="fas fa-arrow-alt-circle-left"></i> Atrás</button>
