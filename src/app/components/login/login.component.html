@@ -4,17 +4,17 @@
         <!--Imagen-->
       </div>
       <div class="col bg-white">
-        <h2 class="fw-bold text-center py-3">Iniciar Sesión</h2>
+        <h2 class="fw-bold text-center py-3">{{titulo}}</h2>
   
         <!-- LOGIN -->
-        <form action="#" class="mx-5">
+        <form action="#" class="mx-5" #loginForm="ngForm" (ngSubmit)="login()">
           <div class="mb-3">
             <label for="email" class="form-label">Correo Electrónico</label>
-            <input type="email" class="form-control" name="email" />
+            <input type="email" class="form-control" name="email" [(ngModel)]="docente.email"/>
           </div>
           <div class="mb-3">
             <label for="password" class="form-label">Contraseña</label>
-            <input type="password" class="form-control" name="password" />
+            <input type="password" class="form-control" name="password" [(ngModel)]="docente.password"/>
           </div>
           <div class="mb-3">
             <input type="checkbox" class="form-chek-input" name="connected" />

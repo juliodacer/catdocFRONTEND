@@ -9,9 +9,14 @@ import { Docente } from '../models/docente';
 })
 export class DocenteService {
 
-  docenteURL = environment.docenteURL;
+  docenteURL = "http://localhost:8080/docente/";
+ /*  docenteURL = environment.docenteURL; */
 
   constructor(private httpClient: HttpClient) { }
+
+  public loginDocente(docente: Docente): Observable<any>{
+    return this.httpClient.post<any>(this.docenteURL + 'login', docente)
+  }
 
   public list(): Observable<Docente[]> {
     return this.httpClient.get<Docente[]>(this.docenteURL + 'list')

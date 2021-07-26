@@ -12,10 +12,7 @@ import { DocenteService } from 'src/app/services/docente.service';
 export class RegistrarDocenteComponent implements OnInit {
 
   titulo: "Registrar Docente";
-  name= '';
-  surname= '';
-  email= '';
-  password= '';
+  docente = new Docente();
 
   constructor(
               private docenteService: DocenteService,
@@ -26,15 +23,15 @@ export class RegistrarDocenteComponent implements OnInit {
   }
 
   onCreate(): void {
-    const docente = new Docente(this.name, this.surname, this.email, this.password);
-    this.docenteService.save(docente).subscribe(
+    /* const docente = new Docente(docente); */
+    this.docenteService.save(this.docente).subscribe(
       data => {
         this.toastr.success('Producto Creado', 'OK', {
           timeOut: 3000
         });
         this.router.navigate(['/']);
       }, err => {
-        this.toastr.error('err.error.mensaje', 'Fail', {
+        this.toastr.error(err.error.mensaje, 'Fail', {
           timeOut: 3000
         });
         this.router.navigate(['/']);
